@@ -16,9 +16,9 @@ class CreateConsultorioTable extends Migration
         Schema::create('consultorios', function (Blueprint $table) {
             $table->unsignedInteger('numero');
             $table->text('direccion');
-            $table->string('areas_salud_nombre');
+            $table->string('nombre_area');
 
-            $table->foreign('areas_salud_nombre')->references('nombre')->on('areas_salud')->onDelete('cascade');
+            $table->foreign('nombre_area')->references('nombre')->on('areas_salud')->onDelete('cascade');
             $table->primary('numero');
         });
     }

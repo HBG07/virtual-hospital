@@ -14,7 +14,7 @@ class CreatePesquisaTable extends Migration
     public function up()
     {
         Schema::create('pesquisas', function (Blueprint $table) {
-            $table->string('pesquisados_CI');
+            $table->string('CI_pesquisado');
             $table->date('fecha');
             $table->set('tipo_pesquisador',['médico','estomatólogo','enfermera','técnico','estudiante','lider de la comunidad']);
             $table->boolean('anciano_solo');
@@ -30,8 +30,8 @@ class CreatePesquisaTable extends Migration
             $table->boolean('t_salud');
             $table->boolean('t_turismo');
 
-            $table->foreign('pesquisados_CI')->references('CI')->on('pesquisados')->onDelete('cascade');
-            $table->primary(['pesquisados_CI','fecha']);
+            $table->foreign('CI_pesquisado')->references('CI')->on('pesquisados')->onDelete('cascade');
+            $table->primary(['CI_pesquisado','fecha']);
         });
     }
 
