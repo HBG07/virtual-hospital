@@ -32,6 +32,7 @@ class CreatePesquisaTable extends Migration
 
             $table->foreign('CI_pesquisado')->references('CI')->on('pesquisados')->onDelete('cascade');
             $table->primary(['CI_pesquisado','fecha']);
+            $table->timestamps();
         });
     }
 

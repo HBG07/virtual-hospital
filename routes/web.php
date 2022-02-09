@@ -24,7 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix'=>'admin'],function(){
     Route::resource('area','AreaController')->except('destroy');
-    Route::get('area/{id}/destroy', [
+    Route::get('area/{area}/destroy', [
         'uses'=>'AreaController@destroy',
         'as'=>'area.destroy'
     ]);

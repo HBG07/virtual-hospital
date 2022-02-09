@@ -22,6 +22,7 @@ class CreatePesquisadoTable extends Migration
 
             $table->primary('CI');
             $table->foreign('numero_consultorio')->references('numero')->on('consultorios')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

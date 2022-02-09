@@ -19,6 +19,7 @@ class CreateAreaSaludTable extends Migration
             $table->string('provincia');
 
             $table->primary('nombre');
+            $table->timestamps();
         });
     }
 
