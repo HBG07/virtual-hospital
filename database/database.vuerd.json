@@ -1,0 +1,799 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -0.8,
+    "scrollLeft": -1.6,
+    "zoomLevel": 1,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": true,
+      "columnPrimaryKey": true,
+      "columnUnique": true,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": true,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "Consultorio",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Numero",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "b4ef02f5-8d8b-4abd-94cd-d8f08f17c01d"
+          },
+          {
+            "name": "Direccion",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "52a5236c-9dcf-4594-950c-64262c0b8dc5"
+          },
+          {
+            "name": "Nombre",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "32dc3f36-1ca6-4e3e-8db3-465e2e96d2f1"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 118.4,
+          "top": 247.2,
+          "zIndex": 49,
+          "widthName": 72.87606811523438,
+          "widthComment": 60,
+          "color": "#795548"
+        },
+        "visible": true,
+        "id": "d336af1a-0dec-477e-b39a-97a8f4df58db"
+      },
+      {
+        "name": "Pesquisado",
+        "comment": "",
+        "columns": [
+          {
+            "name": "CI",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "9fc7fe85-c0be-49cc-ae1e-ea331af507a9"
+          },
+          {
+            "name": "Nombre",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "e7340cd7-209f-4135-acb6-31b822ecdf39"
+          },
+          {
+            "name": "PrimerApellido",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 93.00007629394531,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "52b88746-9304-4ecd-b192-2d581aa7df46"
+          },
+          {
+            "name": "SegundoApellido",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 105.94810485839844,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "8c201a8b-f8be-4e69-8e5e-e7e252ac57be"
+          },
+          {
+            "name": "Numero",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "f8a280a1-0fc6-4e46-b258-c8c5148b5da9"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 95.2,
+          "top": 472,
+          "zIndex": 48,
+          "widthName": 72.18705749511719,
+          "widthComment": 60,
+          "color": "#2196F3"
+        },
+        "visible": true,
+        "id": "072bc178-2b09-430e-a9d9-2c2afe7cd7ee"
+      },
+      {
+        "name": "Pesquisa",
+        "comment": "",
+        "columns": [
+          {
+            "name": "CI",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": true,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "76677d51-7d0a-4c79-bb7e-18ea1d425e14"
+          },
+          {
+            "name": "Fecha",
+            "comment": "",
+            "dataType": "DATE",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ac18decd-29eb-4dca-8066-9980ce4fcc31"
+          },
+          {
+            "name": "TipoPesquisador",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 103.99809265136719,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "a3ee8b8d-25fd-4b69-abc5-7189ea62f032"
+          },
+          {
+            "name": "AncianoSolo",
+            "comment": "",
+            "dataType": "BOOL",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 77.34806823730469,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "4655a74d-9d91-4c70-a22e-0ee40e3ffb20"
+          },
+          {
+            "name": "App",
+            "comment": "",
+            "dataType": "BOOL",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "956e908f-5a03-4bea-bfcc-5aa586a2933f"
+          },
+          {
+            "name": "Encamado",
+            "comment": "",
+            "dataType": "BOOL",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 66.10305786132812,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "09495ca7-420d-4035-99ad-bb35be307200"
+          },
+          {
+            "name": "VIH",
+            "comment": "",
+            "dataType": "BOOL",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "abcd8888-d4ad-4c4f-b2c0-c3a4df6d2f8e"
+          },
+          {
+            "name": "Diambulante",
+            "comment": "",
+            "dataType": "BOOL",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 81.02706909179688,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "17bbf708-3f09-4a29-99c4-d732f0a6f163"
+          },
+          {
+            "name": "FamiliaRiesgo",
+            "comment": "",
+            "dataType": "BOOL",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 86.40907287597656,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "42152f98-4cb9-483a-9163-f9bbdc8cf74c"
+          },
+          {
+            "name": "Embarazada",
+            "comment": "",
+            "dataType": "BOOL",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 77.7640380859375,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "545c256a-ce99-4f71-a5dc-9ba7cd8e72fc"
+          },
+          {
+            "name": "Puerpera",
+            "comment": "",
+            "dataType": "BOOL",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "ea532756-ce2a-4bcc-aff5-28a91b732546"
+          },
+          {
+            "name": "Contacto",
+            "comment": "",
+            "dataType": "BOOL",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "f64442b9-cec6-4bda-aad5-261b13582ba5"
+          },
+          {
+            "name": "Inmunodeprimido",
+            "comment": "",
+            "dataType": "BOOL",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 113.943115234375,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "0126ce53-829f-4475-a514-2c7ab63fe2a5"
+          },
+          {
+            "name": "TSalud",
+            "comment": "",
+            "dataType": "BOOL",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "5019668c-cb9f-46e7-a6c1-40fe84475d3b"
+          },
+          {
+            "name": "TTurismo",
+            "comment": "",
+            "dataType": "BOOL",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "b0cc44cb-0ae4-4564-ba38-7c926fe181dc"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 632.8,
+          "top": 294.4,
+          "zIndex": 47,
+          "widthName": 60,
+          "widthComment": 60,
+          "color": "#9C27B0"
+        },
+        "visible": true,
+        "id": "7eabed71-2f2d-4eef-b9e1-1bd8e77e4e02"
+      },
+      {
+        "name": "Area de salud",
+        "comment": "",
+        "columns": [
+          {
+            "name": "Nombre",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "be4621da-e14a-4274-9bd6-fc1b9e077a65"
+          },
+          {
+            "name": "Municipio",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 62.02107238769531,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "aaa274ff-202e-4989-b4a0-16ec88106c99"
+          },
+          {
+            "name": "Provincia",
+            "comment": "",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "797eb921-5f70-42d5-9200-5d2126c305ce"
+          }
+        ],
+        "ui": {
+          "active": true,
+          "left": 363.2,
+          "top": 50.4,
+          "zIndex": 50,
+          "widthName": 85.03105163574219,
+          "widthComment": 60,
+          "color": "#607D8B"
+        },
+        "visible": true,
+        "id": "18210f71-e1af-4117-8f75-edb58ef81351"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "d336af1a-0dec-477e-b39a-97a8f4df58db",
+          "columnIds": [
+            "b4ef02f5-8d8b-4abd-94cd-d8f08f17c01d"
+          ],
+          "x": 315.4,
+          "y": 377.7,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "072bc178-2b09-430e-a9d9-2c2afe7cd7ee",
+          "columnIds": [
+            "f8a280a1-0fc6-4e46-b258-c8c5148b5da9"
+          ],
+          "x": 315.1740524291992,
+          "y": 472,
+          "direction": "top"
+        },
+        "constraintName": "fk_consultorio_to_pesquisado",
+        "visible": true,
+        "id": "45e4ce25-519a-4934-87d7-eecb4892f135"
+      },
+      {
+        "identification": true,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "072bc178-2b09-430e-a9d9-2c2afe7cd7ee",
+          "columnIds": [
+            "9fc7fe85-c0be-49cc-ae1e-ea331af507a9"
+          ],
+          "x": 535.1481048583985,
+          "y": 557.75,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "7eabed71-2f2d-4eef-b9e1-1bd8e77e4e02",
+          "columnIds": [
+            "76677d51-7d0a-4c79-bb7e-18ea1d425e14"
+          ],
+          "x": 632.8,
+          "y": 482.65,
+          "direction": "left"
+        },
+        "constraintName": "fk_pesquisado_to_pesquisa",
+        "visible": true,
+        "id": "74de0863-49b5-4110-a756-7e77baa4a188"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "18210f71-e1af-4117-8f75-edb58ef81351",
+          "columnIds": [
+            "be4621da-e14a-4274-9bd6-fc1b9e077a65"
+          ],
+          "x": 363.2,
+          "y": 115.65,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "d336af1a-0dec-477e-b39a-97a8f4df58db",
+          "columnIds": [
+            "32dc3f36-1ca6-4e3e-8db3-465e2e96d2f1"
+          ],
+          "x": 315.4,
+          "y": 247.2,
+          "direction": "top"
+        },
+        "constraintName": "fk_area de salud_to_consultorio",
+        "visible": true,
+        "id": "5ad61949-eaf5-4965-95c1-d6e690063198"
+      }
+    ]
+  }
+}
