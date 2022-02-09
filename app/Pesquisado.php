@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pesquisado extends Model
 {
+    protected $primaryKey = "CI";
+    protected $keyType = "string";
     protected $table = "pesquisados";
     protected $fillable = ['CI','nombre','primer_apellido','segundo_apellido'];
 

@@ -11,6 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +21,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['prefix'=>'admin'],function(){
+    Route::resource('area','AreaController')->except('destroy');
+    Route::get('area/{id}/destroy', [
+        'uses'=>'AreaController@destroy',
+        'as'=>'area.destroy'
+    ]);
+});

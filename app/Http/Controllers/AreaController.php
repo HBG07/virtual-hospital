@@ -14,7 +14,8 @@ class AreaController extends Controller
      */
     public function index()
     {
-        //
+        $areas = Area::paginate(5);
+        // TODO: View para mostrar la table de Areas
     }
 
     /**
@@ -24,7 +25,7 @@ class AreaController extends Controller
      */
     public function create()
     {
-        //
+        // TODO: View hacia el formulario de crear las Areas
     }
 
     /**
@@ -35,7 +36,9 @@ class AreaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $area = new Area($request->all());
+        $area->save();
+        // TODO: Route to redirect to index
     }
 
     /**
@@ -57,7 +60,7 @@ class AreaController extends Controller
      */
     public function edit(Area $area)
     {
-        //
+        // TODO: view
     }
 
     /**
@@ -69,7 +72,9 @@ class AreaController extends Controller
      */
     public function update(Request $request, Area $area)
     {
-        //
+        $area->fill($request->all());
+        $area->save();
+        // TODO: Redirect to index
     }
 
     /**
@@ -80,6 +85,7 @@ class AreaController extends Controller
      */
     public function destroy(Area $area)
     {
-        //
+        $area->delete();
+        // TODO: Redirect to index
     }
 }

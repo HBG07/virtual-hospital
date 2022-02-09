@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Area extends Model
 {
+    protected $primaryKey = "nombre";
+    protected $keyType = "string";
     protected $table = "areas_salud";
     protected $fillable = ['nombre','municipio','provincia'];
 
