@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Pesquisado;
+use App\Consultorio;
 use Illuminate\Http\Request;
 
 class PesquisadoController extends Controller
@@ -14,7 +15,8 @@ class PesquisadoController extends Controller
      */
     public function index()
     {
-        //
+        $pesquisados = Pesquisado::paginate(10);
+        return view('pesquisado.index')->with('pesquisados',$pesquisados);
     }
 
     /**
@@ -24,7 +26,8 @@ class PesquisadoController extends Controller
      */
     public function create()
     {
-        //
+        $consultorios = Consultorio::all();
+        return view('pesquisado.create')->with('consultorios',$consultorios);
     }
 
     /**
@@ -35,7 +38,9 @@ class PesquisadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $pesquisado = new Pesquisado($request->all());
+        $pesquisado->save();
+        return redirect()->route('pesquisado.index');
     }
 
     /**
@@ -46,7 +51,7 @@ class PesquisadoController extends Controller
      */
     public function show(Pesquisado $pesquisado)
     {
-        //
+        return view('pesquisado.show')->with('pesquisado',$pesquisado);
     }
 
     /**
@@ -57,7 +62,8 @@ class PesquisadoController extends Controller
      */
     public function edit(Pesquisado $pesquisado)
     {
-        //
+        $consultorios = Consultorio::all();
+        return view('pesquisado.edit')->with(['pesquisado'=>$pesquisado,'consultorios'=>$consultorios]);
     }
 
     /**
@@ -69,7 +75,9 @@ class PesquisadoController extends Controller
      */
     public function update(Request $request, Pesquisado $pesquisado)
     {
-        //
+        $pesquisado->fill($request->all());
+        $pesquisado->save();
+        return redirect()->route('pesquisado.index');
     }
 
     /**
@@ -80,6 +88,7 @@ class PesquisadoController extends Controller
      */
     public function destroy(Pesquisado $pesquisado)
     {
-        //
+        $pesquisado->delete();
+        return redirect()->route('pesquisado.index');
     }
 }

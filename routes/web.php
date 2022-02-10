@@ -34,4 +34,10 @@ Route::group(['prefix'=>'admin'],function(){
         'uses'=>'ConsultorioController@destroy',
         'as'=>'consultorio.destroy'
     ]);
+
+    Route::resource('pesquisado','PesquisadoController')->except('destroy');
+    Route::get('pesquisado/{pesquisado}/destroy',[
+        'uses'=>'PesquisadoController@destroy',
+        'as'=>'pesquisado.destroy'
+    ]);
 });

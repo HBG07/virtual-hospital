@@ -4,13 +4,14 @@
     <h1>Editar el consultorio {{ $consultorio->numero }}</h1>
     <form action="{{ route('consultorio.update',$consultorio->numero) }}" method="post">
         @csrf
+        @method('PUT')
         <div class=" form-group">
             <label for="numero">Número</label>
-            <input class=" form-control" type="text" name="numero" id="numero" value="{{ $consultorio->numero}}">
+            <input class=" form-control" type="text" name="numero" id="numero" value="{{ old('numero',$consultorio->numero)}}">
         </div>
         <div class=" form-group">
             <label for="direccion">Dirección</label>
-            <input class=" form-control" type="text" name="direccion" id="direccion" value="{{ $consultorio->direccion}}">
+            <input class=" form-control" type="text" name="direccion" id="direccion" value="{{ old('direccion',$consultorio->direccion)}}">
         </div>
         <div class="form-group">
             <label for="nombre_area">Area de Salud</label>
