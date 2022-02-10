@@ -8,7 +8,7 @@ class Consultorio extends Model
 {
     protected $primaryKey = "numero";
     protected $table = "consultorios";
-    protected $fillable = ['numero','direccion'];
+    protected $fillable = ['numero','direccion','nombre_area'];
 
     public function area(){
         return $this->belongsTo('App\Area','nombre_area','nombre');

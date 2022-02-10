@@ -28,4 +28,10 @@ Route::group(['prefix'=>'admin'],function(){
         'uses'=>'AreaController@destroy',
         'as'=>'area.destroy'
     ]);
+
+    Route::resource('consultorio','ConsultorioController')->except('destroy');
+    Route::get('consultorio/{consultorio}/destroy',[
+        'uses'=>'ConsultorioController@destroy',
+        'as'=>'consultorio.destroy'
+    ]);
 });

@@ -16,7 +16,7 @@ class Pesquisa extends Model
         'app',
         'encamado',
         'VIH',
-        'diambulante',
+        'diambulante', // deambulante
         'familia_riesgo',
         'embarazada',
         'puerpera',
