@@ -40,4 +40,22 @@ Route::group(['prefix'=>'admin'],function(){
         'uses'=>'PesquisadoController@destroy',
         'as'=>'pesquisado.destroy'
     ]);
+
+    Route::resource('pesquisa','PesquisaController')->except(['show','edit','update','destroy']);
+    Route::get('pesquisa/{CI}/{fecha}/edit',[
+        'uses'=>'PesquisaController@edit',
+        'as'=>'pesquisa.edit'
+    ]);
+    Route::put('pesquisa/{CI}/{fecha}/update',[
+        'uses'=>'PesquisaController@update',
+        'as'=>'pesquisa.update'
+    ]);
+    Route::get('pesquisa/{CI}/{fecha}/destroy',[
+        'uses'=>'PesquisaController@destroy',
+        'as'=>'pesquisa.destroy'
+    ]);
+    Route::get('pesquisa/{CI}/{fecha}',[
+        'uses'=>'PesquisaController@show',
+        'as'=>'pesquisa.show'
+    ]);
 });
