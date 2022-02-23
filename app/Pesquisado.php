@@ -9,7 +9,7 @@ class Pesquisado extends Model
     protected $primaryKey = "CI";
     protected $keyType = "string";
     protected $table = "pesquisados";
-    protected $fillable = ['CI','nombre','primer_apellido','segundo_apellido','numero_consultorio'];
+    protected $fillable = ['CI','nombre','primer_apellido','segundo_apellido','edad','numero_consultorio'];
 
     public function consultorio(){
         return $this->belongsTo('App\Consultorio','numero_consultorio','numero');

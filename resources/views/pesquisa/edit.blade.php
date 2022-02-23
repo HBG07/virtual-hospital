@@ -2,7 +2,7 @@
 @section('title','Editar pesquisa')
 @section('content')
     <h1>Editar pesquisa de {{$pesquisa->pesquisado->nombre}} con fecha {{$pesquisa->fecha}}</h1>
-    <a href="{{ route('pesquisado.edit',$pesquisa->pesquisado->CI) }}" class="btn btn-primary">Editar datos de {{ $pesquisa->pesquisado->nombre }}</a>
+    <a href="{{ route('pesquisado.edit',$pesquisa->pesquisado->CI) }}" class="btn btn-primary">Editar datos de {{ $pesquisa->pesquisado->nombre }} {{ $pesquisa->pesquisado->primer_apellido }} {{ $pesquisa->pesquisado->segundo_apellido }}</a>
     <form action="{{ route('pesquisa.update',[$pesquisa->CI_pesquisado,$pesquisa->fecha]) }}" method="post">
         @csrf
         @method('PUT')

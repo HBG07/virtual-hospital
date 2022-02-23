@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Pesquisado;
 use App\Consultorio;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PesquisadoController extends Controller
@@ -39,6 +40,9 @@ class PesquisadoController extends Controller
     public function store(Request $request)
     {
         $pesquisado = new Pesquisado($request->all());
+        // agregar edad automaticamente
+        $edad = Carbon::createFromFormat('ymd',substr($pesquisado->CI,0,6));
+        $pesquisado->edad = $edad->year>Carbon::now()->year ? $edad->year($edad->year-100)->age:$edad->age;
         $pesquisado->save();
         return redirect()->route('pesquisado.index');
     }
@@ -76,6 +80,9 @@ class PesquisadoController extends Controller
     public function update(Request $request, Pesquisado $pesquisado)
     {
         $pesquisado->fill($request->all());
+        // editar edad automaticamente
+        $edad = Carbon::createFromFormat('ymd',substr($pesquisado->CI,0,6));
+        $pesquisado->edad = $edad->year>Carbon::now()->year ? $edad->year($edad->year-100)->age:$edad->age;
         $pesquisado->save();
         return redirect()->route('pesquisado.index');
     }

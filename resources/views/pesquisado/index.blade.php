@@ -9,6 +9,7 @@
         <th>Nombre</th>
         <th>Primer Apellido</th>
         <th>Segundo Apellido</th>
+        <th>Edad</th>
         <th>Consultorio</th>
         <th>Opciones</th>
     </thead>
@@ -19,6 +20,7 @@
                 <td>{{ $pesquisado->nombre }}</td>
                 <td>{{ $pesquisado->primer_apellido }}</td>
                 <td>{{ $pesquisado->segundo_apellido }}</td>
+                <td>{{ $pesquisado->edad }}</td>
                 <td>{{ $pesquisado->numero_consultorio }}</td>
                 <td>
                     <a href="{{ route('pesquisado.edit',$pesquisado->CI) }}" class="btn btn-warning">Editar</a>
