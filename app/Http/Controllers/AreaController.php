@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Area;
+use App\Http\Requests\AreaRequest;
 use Illuminate\Http\Request;
 
 class AreaController extends Controller
@@ -34,7 +35,7 @@ class AreaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AreaRequest $request)
     {
         $area = new Area($request->all());
         $area->save();
@@ -70,7 +71,7 @@ class AreaController extends Controller
      * @param  \App\Area  $area
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Area $area)
+    public function update(AreaRequest $request, Area $area)
     {
         $area->fill($request->all());
         $area->save();

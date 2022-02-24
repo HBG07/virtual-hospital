@@ -6,11 +6,17 @@
     @csrf
     <div class=" form-group">
         <label for="numero">Número</label>
-        <input class=" form-control" type="text" name="numero" id="numero" value="{{ old('numero') }}">
+        <input class=" form-control @error('numero') is-invalid @enderror" type="text" name="numero" id="numero" value="{{ old('numero') }}">
+        @error('numero')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
     <div class=" form-group">
         <label for="direccion">Dirección</label>
-        <input class=" form-control" type="text" name="direccion" id="direccion" value="{{ old('direccion') }}">
+        <input class=" form-control @error('direccion') is-invalid @enderror" type="text" name="direccion" id="direccion" value="{{ old('direccion') }}">
+        @error('direccion')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
     </div>
     <div class="form-group">
         <label for="nombre_area">Area de Salud</label>

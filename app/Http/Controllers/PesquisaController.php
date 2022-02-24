@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Pesquisa;
 use App\Pesquisado;
 use App\Consultorio;
+use App\Http\Requests\PesquisaRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PesquisaController extends Controller
@@ -38,7 +40,7 @@ class PesquisaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PesquisaRequest $request)
     {
         $pesquisado = Pesquisado::find($request->CI_pesquisado);
         // en caso de que no exista el pesquisado
@@ -48,6 +50,9 @@ class PesquisaController extends Controller
             $new_pesquisado->nombre = $request->nombre;
             $new_pesquisado->primer_apellido = $request->primer_apellido;
             $new_pesquisado->segundo_apellido = $request->segundo_apellido;
+            // añadir edad generada
+            $edad = Carbon::createFromFormat('ymd',substr($new_pesquisado->CI,0,6));
+            $new_pesquisado->edad = $edad->year>Carbon::now()->year ? $edad->year($edad->year-100)->age:$edad->age;
             $new_pesquisado->numero_consultorio = $request->numero_consultorio;
             $new_pesquisado->save();
         }
@@ -104,7 +109,7 @@ class PesquisaController extends Controller
      * @param  \App\Pesquisa  $pesquisa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $CI, $fecha)
+    public function update(PesquisaRequest $request, $CI, $fecha)
     {
         $pesquisa = Pesquisa::where('CI_pesquisado',$CI)->where('fecha',$fecha)->first();
         $pesquisa->anciano_solo=0;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Consultorio;
 use App\Area;
+use App\Http\Requests\ConsultorioRequest;
 use Illuminate\Http\Request;
 
 class ConsultorioController extends Controller
@@ -36,7 +37,7 @@ class ConsultorioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ConsultorioRequest $request)
     {
         $consultorio = new Consultorio($request->all());
         $consultorio->save();
@@ -73,7 +74,7 @@ class ConsultorioController extends Controller
      * @param  \App\Consultorio  $consultorio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Consultorio $consultorio)
+    public function update(ConsultorioRequest $request, Consultorio $consultorio)
     {
         $consultorio->fill($request->all());
         $consultorio->save();

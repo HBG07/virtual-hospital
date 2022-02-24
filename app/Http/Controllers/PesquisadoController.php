@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Pesquisado;
 use App\Consultorio;
+use App\Http\Requests\PesquisadoRequest;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -37,7 +38,7 @@ class PesquisadoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PesquisadoRequest $request)
     {
         $pesquisado = new Pesquisado($request->all());
         // agregar edad automaticamente
@@ -77,7 +78,7 @@ class PesquisadoController extends Controller
      * @param  \App\Pesquisado  $pesquisado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pesquisado $pesquisado)
+    public function update(PesquisadoRequest $request, Pesquisado $pesquisado)
     {
         $pesquisado->fill($request->all());
         // editar edad automaticamente
