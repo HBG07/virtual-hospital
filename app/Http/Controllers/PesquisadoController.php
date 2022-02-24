@@ -7,6 +7,7 @@ use App\Consultorio;
 use App\Http\Requests\PesquisadoRequest;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PesquisadoController extends Controller
 {
@@ -44,6 +45,7 @@ class PesquisadoController extends Controller
         // agregar edad automaticamente
         $edad = Carbon::createFromFormat('ymd',substr($pesquisado->CI,0,6));
         $pesquisado->edad = $edad->year>Carbon::now()->year ? $edad->year($edad->year-100)->age:$edad->age;
+        Session::flash('success',$request->nombre.' '.$request->primer_apellido.' agregado con exito');
         $pesquisado->save();
         return redirect()->route('pesquisado.index');
     }
@@ -85,6 +87,7 @@ class PesquisadoController extends Controller
         $edad = Carbon::createFromFormat('ymd',substr($pesquisado->CI,0,6));
         $pesquisado->edad = $edad->year>Carbon::now()->year ? $edad->year($edad->year-100)->age:$edad->age;
         $pesquisado->save();
+        Session::flash('warning',$request->nombre.' '.$request->primer_apellido.' editado con exito');
         return redirect()->route('pesquisado.index');
     }
 
@@ -97,6 +100,7 @@ class PesquisadoController extends Controller
     public function destroy(Pesquisado $pesquisado)
     {
         $pesquisado->delete();
+        Session::flash('danger',$pesquisado->nombre.' '.$pesquisado->primer_apellido.' eliminado con exito');
         return redirect()->route('pesquisado.index');
     }
 }

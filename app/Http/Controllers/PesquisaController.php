@@ -8,6 +8,7 @@ use App\Consultorio;
 use App\Http\Requests\PesquisaRequest;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PesquisaController extends Controller
 {
@@ -74,6 +75,7 @@ class PesquisaController extends Controller
             't_turismo'=>$request->has('t_turismo')
         ]);
         $pesquisa->save();
+        Session::flash('success','Agregada pesquisa con fecha '.$request->fecha.' para '.$request->nombre);
         return redirect()->route('pesquisa.index');
         // dd($request->all());
     }
@@ -109,7 +111,7 @@ class PesquisaController extends Controller
      * @param  \App\Pesquisa  $pesquisa
      * @return \Illuminate\Http\Response
      */
-    public function update(PesquisaRequest $request, $CI, $fecha)
+    public function update(Request $request, $CI, $fecha)
     {
         $pesquisa = Pesquisa::where('CI_pesquisado',$CI)->where('fecha',$fecha)->first();
         $pesquisa->anciano_solo=0;
@@ -126,6 +128,7 @@ class PesquisaController extends Controller
         $pesquisa->t_turismo=0;
         $pesquisa->fill($request->all());
         $pesquisa->save();
+        Session::flash('warning','Modificada pesquisa de con fecha '.$CI.' con fecha '.$fecha);
         return redirect()->route('pesquisa.index');
     }
 
@@ -139,6 +142,7 @@ class PesquisaController extends Controller
     {
         $pesquisa = Pesquisa::where('CI_pesquisado',$CI)->where('fecha',$fecha)->first();
         $pesquisa->delete();
+        Session::flash('danger','Eliminada pesquisa de '.$CI.' con fecha '.$fecha);
         return redirect()->route('pesquisa.index');
     }
 }

@@ -6,6 +6,7 @@ use App\Consultorio;
 use App\Area;
 use App\Http\Requests\ConsultorioRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ConsultorioController extends Controller
 {
@@ -41,6 +42,7 @@ class ConsultorioController extends Controller
     {
         $consultorio = new Consultorio($request->all());
         $consultorio->save();
+        Session::flash('success','El consultorio número '.$request->numero.' ha sido agregado con exito');
         return redirect()->route('consultorio.index');
     }
 
@@ -78,6 +80,7 @@ class ConsultorioController extends Controller
     {
         $consultorio->fill($request->all());
         $consultorio->save();
+        Session::flash('warning','El conultorio número '.$request->numero.' ha sido modificado con exito');
         return redirect()->route('consultorio.index');
     }
 
@@ -90,6 +93,7 @@ class ConsultorioController extends Controller
     public function destroy(Consultorio $consultorio)
     {
         $consultorio->delete();
+        Session::flash('danger','El consultorio número '.$consultorio->numero.' ha sido eliminado con exito');
         return redirect()->route('consultorio.index');
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Area;
 use App\Http\Requests\AreaRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AreaController extends Controller
 {
@@ -39,6 +40,7 @@ class AreaController extends Controller
     {
         $area = new Area($request->all());
         $area->save();
+        Session::flash('success',$request->nombre.' agregada con exito');
         return redirect()->route('area.index');
     }
 
@@ -75,6 +77,7 @@ class AreaController extends Controller
     {
         $area->fill($request->all());
         $area->save();
+        Session::flash('warning',$area->nombre.' ha sido modificada con exito');
         return redirect()->route('area.index');
     }
 
@@ -87,6 +90,7 @@ class AreaController extends Controller
     public function destroy(Area $area)
     {
         $area->delete();
+        Session::flash('danger',$area->nombre.' ha sido eliminada con exito');
         return redirect()->route('area.index');
     }
 }
