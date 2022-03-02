@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -0.8,
-    "scrollLeft": -1.6,
+    "scrollTop": -31.199999999999932,
+    "scrollLeft": -0.8,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -120,7 +120,7 @@
           "active": false,
           "left": 118.4,
           "top": 247.2,
-          "zIndex": 49,
+          "zIndex": 4,
           "widthName": 72.87606811523438,
           "widthComment": 60,
           "color": "#795548"
@@ -252,7 +252,7 @@
           "active": false,
           "left": 95.2,
           "top": 472,
-          "zIndex": 48,
+          "zIndex": 2,
           "widthName": 72.18705749511719,
           "widthComment": 60,
           "color": "#2196F3"
@@ -614,7 +614,7 @@
           "active": false,
           "left": 632.8,
           "top": 294.4,
-          "zIndex": 47,
+          "zIndex": 1,
           "widthName": 60,
           "widthComment": 60,
           "color": "#9C27B0"
@@ -697,10 +697,10 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 363.2,
           "top": 50.4,
-          "zIndex": 50,
+          "zIndex": 3,
           "widthName": 85.03105163574219,
           "widthComment": 60,
           "color": "#607D8B"
@@ -712,7 +712,20 @@
     "indexes": []
   },
   "memo": {
-    "memos": []
+    "memos": [
+      {
+        "value": "Considerar que la llave primaria de Consultorio sea la Direccion",
+        "ui": {
+          "active": true,
+          "left": 419.20000000000016,
+          "top": 193.333333333333,
+          "zIndex": 8,
+          "width": 127.00000000000003,
+          "height": 100.8
+        },
+        "id": "1a57040f-879b-4379-8367-e3dab4356241"
+      }
+    ]
   },
   "relationship": {
     "relationships": [

@@ -20,6 +20,7 @@ class CreateConsultorioTable extends Migration
 
             $table->foreign('nombre_area')->references('nombre')->on('areas_salud')->onDelete('cascade');
             $table->primary('numero');
+            $table->timestamps();
         });
     }
 

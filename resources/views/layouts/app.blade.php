@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title', 'Laravel')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -24,7 +24,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    Pesquisas
+                    {{-- {{ config('app.name', 'Laravel') }} --}}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -49,6 +50,23 @@
                                 </li>
                             @endif
                         @else
+                        <li class="nav-item">
+                            <a href="{{route('home')}}" class="nav-link">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('search.create')}}" class="nav-link">Filtro Avanzado</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a id="navbarAddData" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Añadir Datos
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarAddData">
+                                <a class="dropdown-item" href="{{ route('area.index') }}">Areas</a>
+                                <a class="dropdown-item" href="{{ route('consultorio.index') }}">Consultorios</a>
+                                <a class="dropdown-item" href="{{ route('pesquisado.index') }}">Pesquisados</a>
+                                <a class="dropdown-item" href="{{ route('pesquisa.index') }}">Pesquisas</a>
+                            </div>
+                        </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -73,6 +91,7 @@
         </nav>
 
         <main class="py-4">
+            @include('layouts.flash')
             @yield('content')
         </main>
     </div>

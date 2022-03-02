@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Area;
+use App\Http\Requests\AreaRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AreaController extends Controller
 {
@@ -14,7 +16,8 @@ class AreaController extends Controller
      */
     public function index()
     {
-        //
+        $areas = Area::paginate(5);
+        return view('area.index')->with('areas',$areas);
     }
 
     /**
@@ -24,7 +27,7 @@ class AreaController extends Controller
      */
     public function create()
     {
-        //
+        return view('area.create');
     }
 
     /**
@@ -33,9 +36,12 @@ class AreaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AreaRequest $request)
     {
-        //
+        $area = new Area($request->all());
+        $area->save();
+        Session::flash('success',$request->nombre.' agregada con exito');
+        return redirect()->route('area.index');
     }
 
     /**
@@ -46,7 +52,7 @@ class AreaController extends Controller
      */
     public function show(Area $area)
     {
-        //
+        return view('area.show')->with('area',$area);
     }
 
     /**
@@ -57,7 +63,7 @@ class AreaController extends Controller
      */
     public function edit(Area $area)
     {
-        //
+        return view('area.edit')->with('area',$area);
     }
 
     /**
@@ -67,9 +73,12 @@ class AreaController extends Controller
      * @param  \App\Area  $area
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Area $area)
+    public function update(AreaRequest $request, Area $area)
     {
-        //
+        $area->fill($request->all());
+        $area->save();
+        Session::flash('warning',$area->nombre.' ha sido modificada con exito');
+        return redirect()->route('area.index');
     }
 
     /**
@@ -80,6 +89,8 @@ class AreaController extends Controller
      */
     public function destroy(Area $area)
     {
-        //
+        $area->delete();
+        Session::flash('danger',$area->nombre.' ha sido eliminada con exito');
+        return redirect()->route('area.index');
     }
 }

@@ -18,10 +18,12 @@ class CreatePesquisadoTable extends Migration
             $table->string('nombre');
             $table->string('primer_apellido');
             $table->string('segundo_apellido');
+            $table->integer('edad');
             $table->unsignedInteger('numero_consultorio');
 
             $table->primary('CI');
             $table->foreign('numero_consultorio')->references('numero')->on('consultorios')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
