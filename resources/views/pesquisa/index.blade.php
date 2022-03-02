@@ -3,6 +3,11 @@
 @section('content')
     <h1>Pesquisas</h1>
     <a href="{{ route('pesquisa.create') }}" class="btn btn-success mb-2">Añadir pesquisa</a>
+    <ul class="list-group list-group-horizontal mb-2">
+        <li class="list-group-item-success p-2"><b>Cantidad pesquisas: {{ $cantidad_pesquisas }}</b></li>
+        <li class="list-group-item p-2"><b>Cantidad pesquisado: {{ $cantidad_pesquisados }} </b></li>
+        <li class="list-group-item-danger p-2"><b>Cantidad contactos acumulados: {{ $cantidad_contactos_acumulados }} </b></li>
+    </ul>
     <table class="table text-center">
         <thead>
             <th>CI</th>

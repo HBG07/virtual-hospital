@@ -45,8 +45,9 @@ class SearchController extends Controller
                     break;
             }
         }
-
-        return view('pesquisa.index')->with(['pesquisas'=>$pesquisas->get()]);
+        $cantidad_pesquisas = $pesquisas->count();
+        $cantidad_pesquisados = $pesquisas->distinct('CI_pesquisado')->count();
+        return view('pesquisa.index')->with(['pesquisas'=>$pesquisas->get(),'cantidad_pesquisas' => $cantidad_pesquisas, 'cantidad_pesquisados' => $cantidad_pesquisados, 'cantidad_contactos_acumulados' => $pesquisas->where('contacto',1)->count()]);
         // return dd($pesquisas->get());
     }
 }

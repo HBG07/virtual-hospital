@@ -51,16 +51,16 @@
                             @endif
                         @else
                         <li class="nav-item">
-                            <a href="{{route('home')}}" class="nav-link">Dashboard</a>
+                            <a href="{{route('dashboard')}}" class="nav-link">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('search.create')}}" class="nav-link">Filtro Avanzado</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarAddData" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Añadir Datos
+                                Datos
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarAddData">
+                            <div class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="navbarAddData">
                                 <a class="dropdown-item" href="{{ route('area.index') }}">Areas</a>
                                 <a class="dropdown-item" href="{{ route('consultorio.index') }}">Consultorios</a>
                                 <a class="dropdown-item" href="{{ route('pesquisado.index') }}">Pesquisados</a>
