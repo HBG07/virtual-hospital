@@ -22,25 +22,30 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Group admin routes
 Route::group(['prefix'=>'admin'],function(){
+    // Area routes
     Route::resource('area','AreaController')->except('destroy');
     Route::get('area/{area}/destroy', [
         'uses'=>'AreaController@destroy',
         'as'=>'area.destroy'
     ]);
 
+    // Consultorio routes
     Route::resource('consultorio','ConsultorioController')->except('destroy');
     Route::get('consultorio/{consultorio}/destroy',[
         'uses'=>'ConsultorioController@destroy',
         'as'=>'consultorio.destroy'
     ]);
 
+    // Pesquisado routes
     Route::resource('pesquisado','PesquisadoController')->except('destroy');
     Route::get('pesquisado/{pesquisado}/destroy',[
         'uses'=>'PesquisadoController@destroy',
         'as'=>'pesquisado.destroy'
     ]);
 
+    // Pesquisa routes
     Route::resource('pesquisa','PesquisaController')->except(['show','edit','update','destroy']);
     Route::get('pesquisa/{CI}/{fecha}/edit',[
         'uses'=>'PesquisaController@edit',
@@ -57,5 +62,16 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('pesquisa/{CI}/{fecha}',[
         'uses'=>'PesquisaController@show',
         'as'=>'pesquisa.show'
+    ]);
+
+    // Advanced search routes
+    Route::get('search/',[
+        'uses'=>'SearchController@create',
+        'as'=>'search.create'
+    ]);
+    // FIXME: not used yet
+    Route::post('search/',[
+        'uses'=>'SearchController@show',
+        'as'=>'search.show'
     ]);
 });

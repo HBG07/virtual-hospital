@@ -13,7 +13,7 @@
             <th>App</th>
             <th>Encamado</th>
             <th>VIH</th>
-            <th>Diambulante</th>
+            <th>Deambulante</th>
             <th>Riesgo</th>
             <th>Embarazada</th>
             <th>Puerpera</th>
