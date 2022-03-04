@@ -11,10 +11,12 @@
 |
 */
 
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    if(User::all()->count()==0) return view('auth.register');
     return view('welcome');
 });
 

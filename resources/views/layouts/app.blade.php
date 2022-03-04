@@ -75,6 +75,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right mt-3" aria-labelledby="navbarDropdown">
+                                    @if (Auth::user()->type=='administrador')
+                                    <a class="dropdown-item" href="{{ route('register') }}">Registrar usuario</a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
