@@ -176,6 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         // Collective
         Collective\Html\HtmlServiceProvider::class,
+        // Chartjs
+        \Fx3costa\LaravelChartJs\Providers\ChartjsServiceProvider::class,
 
     ],
 
