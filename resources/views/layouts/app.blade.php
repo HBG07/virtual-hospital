@@ -46,11 +46,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            @if (Route::has('register'))
+                            {{-- @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
+                            @endif --}}
                         @else
                         <li class="nav-item">
                             <a href="{{route('dashboard')}}" class="nav-link">Dashboard</a>
@@ -77,6 +77,7 @@
                                 <div class="dropdown-menu dropdown-menu-right mt-3" aria-labelledby="navbarDropdown">
                                     @if (Auth::user()->type=='administrador')
                                     <a class="dropdown-item" href="{{ route('register') }}">Registrar usuario</a>
+                                    <a class="dropdown-item" href="{{ route('user.index') }}">Editar usuarios</a>
                                     @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

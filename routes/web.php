@@ -22,6 +22,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('users/','ViewEditUpdateController@index')->name('user.index');
+Route::get('user/edit/{user}','ViewEditUpdateController@edit')->name('user.edit');
+Route::put('user/update/{user}/','ViewEditUpdateController@update')->name('user.update');
+Route::get('user/{user}/destroy/','ViewEditUpdateController@destroy')->name('user.destroy');
+
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 Route::post('/dashboard','HomeController@show')->name('home.show');
 
