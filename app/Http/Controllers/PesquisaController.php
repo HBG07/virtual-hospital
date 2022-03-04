@@ -19,7 +19,7 @@ class PesquisaController extends Controller
      */
     public function index()
     {
-        $pesquisas = Pesquisa::with('pesquisado')->paginate(10);
+        $pesquisas = Pesquisa::orderBy('fecha','DESC')->with('pesquisado')->paginate(10);
         $cantidad_pesquisas = Pesquisa::all()->count();
         $cantidad_pesquisados = Pesquisado::all()->count();
         $cantidad_contactos_acumulados = Pesquisa::all()->where('contacto', 1)->count();

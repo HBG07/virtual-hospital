@@ -21,6 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+Route::post('/dashboard','HomeController@show')->name('home.show');
 
 // Group admin routes
 Route::group(['prefix'=>'admin'],function(){

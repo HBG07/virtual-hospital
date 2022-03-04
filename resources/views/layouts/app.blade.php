@@ -18,10 +18,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Pesquisas
@@ -60,7 +61,7 @@
                             <a id="navbarAddData" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Datos
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="navbarAddData">
+                            <div class="dropdown-menu dropdown-menu-right mt-3" aria-labelledby="navbarAddData">
                                 <a class="dropdown-item" href="{{ route('area.index') }}">Areas</a>
                                 <a class="dropdown-item" href="{{ route('consultorio.index') }}">Consultorios</a>
                                 <a class="dropdown-item" href="{{ route('pesquisado.index') }}">Pesquisados</a>
@@ -72,7 +73,7 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right mt-3" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
