@@ -1,8 +1,8 @@
-@font-face {
+/* @font-face {
     font-family: Nunito;
     src: url('/../fonts/Nunito-VariableFont_wght.ttf');
-    font-weight: 200;
-}
+    font-weight: 300;
+} */
 .bd-callout {
     padding: 1.25rem;
     margin-top: 1.25rem;
@@ -20,4 +20,10 @@
 }
 .bd-callout-success {
     border-left-color: #38c172;
+}
+.form-group{
+    margin-bottom: 1rem;
+}
+.table{
+    margin-bottom: 0%;
 }

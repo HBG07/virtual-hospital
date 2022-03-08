@@ -4,13 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Pesquisas</title>
 
         <!-- Fonts -->
         {{-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet"> --}}
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{asset('css/style.css')}}">
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <script src="{{asset('js/app.js')}}"></script>
         <style>
             html, body {
                 background-color: #fff;
@@ -82,6 +84,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
+                    <i class=" fas fa-hospital"></i>
                     Pesquisas
                 </div>
 

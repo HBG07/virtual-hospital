@@ -36,11 +36,11 @@
             @isset($day)
             <div class="card mx-auto" style="width: 95%">
             <div class="card-header bg-success">
-                <h3 class="card-title d-inline">Resumen del {{$day}}</h3>
-                <form class="form-inline d-inline" style="margin-left: 50%" action="{{ route('home.show') }}" method="post">
+                <h3 class="card-title d-inline-flex me-auto">Resumen del {{$day}}</h3>
+                <form class="d-flex float-end" action="{{ route('home.show') }}" method="post">
                     @csrf
-                    <input class="form-control mr-sm-2" type="date" name="fecha" id="fecha">
-                    <input class="btn btn-secondary" type="submit" value="Actualizar Estadísticas">
+                    <input class="form-control me-2" type="date" name="fecha" id="fecha">
+                    <input class="btn btn-secondary" type="submit" value="Ver Estadísticas">
                 </form>
             </div>
                 <div class="card-body">

@@ -53,6 +53,8 @@ class HomeController extends Controller
                 ->datasets([
                     [
                         "label" => "Resumen del día " . $last_day,
+                        "fill"=>true,
+                        'borderWidth'=>2,
                         'backgroundColor' => "rgba(38, 185, 154, 0.31)",
                         'borderColor' => "rgba(38, 185, 154, 0.7)",
                         "pointBorderColor" => "rgba(38, 185, 154, 0.7)",
@@ -75,7 +77,7 @@ class HomeController extends Controller
                         ],
                     ]
                 ])
-                ->options([]);
+                ->options(['responsive'=>true,'maintainAspectRatio'=>false]);
             return view('home')->with([
                 'day' => $last_day,
                 'cantidad_pesquisas' => Pesquisa::all()->count(),
@@ -112,6 +114,8 @@ class HomeController extends Controller
                 ->datasets([
                     [
                         "label" => "Resumen del día " . $request->fecha,
+                        "fill"=>true,
+                        'borderWidth'=>2,
                         'backgroundColor' => "rgba(38, 185, 154, 0.31)",
                         'borderColor' => "rgba(38, 185, 154, 0.7)",
                         "pointBorderColor" => "rgba(38, 185, 154, 0.7)",
@@ -134,7 +138,7 @@ class HomeController extends Controller
                         ],
                     ]
                 ])
-                ->options([]);
+                ->options(['responsive'=>true,'maintainAspectRatio'=>false]);
             return view('home')->with([
                 'day' => $request->fecha,
                 'cantidad_pesquisas' => Pesquisa::all()->count(),
