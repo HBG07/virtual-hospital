@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\HomeRequest;
 use App\Pesquisa;
 use App\Pesquisado;
 use Illuminate\Http\Request;
@@ -89,7 +90,7 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function show(Request $request)
+    public function show(HomeRequest $request)
     {
         $get_data_day = Pesquisa::all()->where('fecha', $request->fecha);
         if (isset($get_data_day)) {
@@ -148,5 +149,13 @@ class HomeController extends Controller
             ]);
         }
         return view('home');
+    }
+
+    public function contactos(){
+        $pesquisas = Pesquisa::orderBy('fecha','DESC')->where('contacto',1)->with('pesquisado')->paginate(10);
+        $cantidad_pesquisas = Pesquisa::all()->count();
+        $cantidad_pesquisados = Pesquisado::all()->count();
+        $cantidad_contactos_acumulados = Pesquisa::all()->where('contacto', 1)->count();
+        return view('pesquisa.index')->with(['pesquisas' => $pesquisas, 'cantidad_pesquisas' => $cantidad_pesquisas, 'cantidad_pesquisados' => $cantidad_pesquisados, 'cantidad_contactos_acumulados' => $cantidad_contactos_acumulados]);
     }
 }

@@ -89,10 +89,10 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{route('area.index')}}">Area</a>
-                    <a href="{{route('consultorio.index')}}">Consultorio</a>
-                    <a href="{{route('pesquisado.index')}}">Pesquisado</a>
-                    <a href="{{route('pesquisa.index')}}">Pesquisa</a>
+                    <a href="{{route('area.index')}}">Areas</a>
+                    <a href="{{route('consultorio.index')}}">Consultorios</a>
+                    <a href="{{route('pesquisado.index')}}">Pesquisados</a>
+                    <a href="{{route('pesquisa.index')}}">Pesquisas</a>
                 </div>
             </div>
         </div>

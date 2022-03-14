@@ -28,6 +28,7 @@
             </select>
         </div>
         <input class="btn btn-success" type="submit" value="Añadir">
+        <a href="{{ route('consultorio.index') }}" class="btn btn-secondary m-1"><i class="fas fa-arrow-rotate-back"></i> Volver</a>
     </form>
 </div>
 @endsection

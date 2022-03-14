@@ -3,11 +3,12 @@
 @section('content')
     <div class="container-fluid">
         <h1>Detalles de {{ $area->nombre }}</h1>
+        <a href="{{ route('area.index') }}" class="btn btn-secondary m-1"><i class="fas fa-arrow-rotate-back"></i> Volver</a>
         <div class="card m-1 shadow-sm">
             <div class="card-header bg-dark">
                 <div class="card-title text-white m-0 p-0">
                     <p class="d-inline">Provincia: {{ $area->provincia }}</p>
-                    <p class="d-inline ml-5">Municipio: {{ $area->municipio }}</p>
+                    <p class="d-inline ms-5">Municipio: {{ $area->municipio }}</p>
                 </div>
             </div>
             <div class="card-body m-0 p-0">

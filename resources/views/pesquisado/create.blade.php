@@ -42,6 +42,7 @@
                 </select>
             </div>
             <input type="submit" value="Añadir" class="btn btn-success">
+            <a href="{{ route('pesquisado.index') }}" class="btn btn-secondary m-1"><i class="fas fa-arrow-rotate-back"></i> Volver</a>
         </form>
     </div>
 @endsection

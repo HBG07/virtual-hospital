@@ -4,6 +4,7 @@
 <div class="container-fluid">
     <h1 class="text-center">Detalles del consultorio número {{ $consultorio->numero }}</h1>
     <a class="btn btn-success m-1" href="{{route('consultorio.edit',$consultorio->numero)}}">Editar consultorio</a>
+    <a href="{{ route('consultorio.index') }}" class="btn btn-secondary m-1"><i class="fas fa-arrow-rotate-back"></i> Volver</a>
     <div class="card m-1 shadow-sm">
         <div class="card-header bg-dark">
             <div class="card-title text-white m-0 p-0">

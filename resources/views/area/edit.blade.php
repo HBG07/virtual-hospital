@@ -26,6 +26,7 @@
             @enderror
         </div>
         <input class="btn btn-primary" type="submit" value="Editar">
+        <a href="{{ route('area.index') }}" class="btn btn-secondary m-1"><i class="fas fa-arrow-rotate-back"></i> Volver</a>
         {!! Form::close() !!}
 </div>
 @endsection

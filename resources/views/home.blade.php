@@ -19,7 +19,7 @@
             <div class="bd-callout bd-callout-danger">
                 <h3>{{ $cantidad_contactos_historicos ?? 0 }}</h3>
                 <h3>Contactos</h3>
-                <a href="{{ route('pesquisa.index') }}" class="btn btn-lg btn-danger">Ver</a>
+                <a href="{{ route('home.contactos') }}" class="btn btn-lg btn-danger">Ver</a>
             </div>
         </div>
         <div class="col">

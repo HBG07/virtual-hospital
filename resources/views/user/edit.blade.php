@@ -2,7 +2,7 @@
 @section('title','Usuarios')
 @section('content')
 <div class="container">
-<h1>Editar datos de {{$usuario->name}}</h1>
+<h1><i class="fas fa-user-gear"></i> Editar datos de {{$usuario->name}}</h1>
 <form action="{{route('user.update',$usuario->id)}}" method="post">
     @csrf
     @method('PUT')
@@ -36,6 +36,7 @@
         <input class="form-control @error('password') is-invalid @enderror" type="password" name="password_confirmation" id="password_confirmation" value="{{ old('password',$usuario->password) }}">
     </div>
     <input class="btn btn-primary" type="submit" value="Modificiar">
+    <a href="{{ route('user.index') }}" class="btn btn-secondary m-1"><i class="fas fa-arrow-rotate-back"></i> Volver</a>
 </form>
 
 </div>

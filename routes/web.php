@@ -29,6 +29,7 @@ Route::get('user/{user}/destroy/','ViewEditUpdateController@destroy')->name('use
 
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 Route::post('/dashboard','HomeController@show')->name('home.show');
+Route::get('admin/pesquisas/contactos','HomeController@contactos')->name('home.contactos');
 
 // Group admin routes
 Route::group(['prefix'=>'admin'],function(){
