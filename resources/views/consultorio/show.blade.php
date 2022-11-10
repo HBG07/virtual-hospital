@@ -24,7 +24,7 @@
                     <th>Opciones</th>
                 </thead>
                 <tbody>
-                    @foreach ($consultorio->pesquisados as $pesquisado)
+                    @foreach ($pesquisados as $pesquisado)
                     <tr>
                         <td><a class="text-dark" href="{{ route('pesquisado.show',$pesquisado->CI) }}">{{ $pesquisado->CI }}</a></td>
                         <td>{{ $pesquisado->nombre }}</td>
@@ -38,8 +38,9 @@
                         </td>
                     </tr>
                 @endforeach
-                </tbody>
-            </table>
+            </tbody>
+        </table>
+        {{$pesquisados->links()}}
         </div>
     </div>
 </div>

@@ -32,7 +32,7 @@
                     @endif
                 </tbody>
             </table>
-            {{ $consultorios->links() }}
         </div>
+        {{ $consultorios->links() }}
     </div>
 @endsection

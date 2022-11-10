@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title','Areas')
+@section('title','Areas de Salud')
 @section('content')
     <div class="container-fluid">
-        <h1 class="text-center"><i class="fas fa-hospital-wide"></i> Áreas</h1>
+        <h1 class="text-center"><i class="fas fa-hospital-wide"></i> Áreas de Salud</h1>
         <a href="{{ route('area.create') }}" class="btn btn-success m-1"><i class="fas fa-plus"></i> Añadir Area</a>
         <a href="{{ route('dashboard') }}" class="btn btn-secondary m-1"><i class="fas fa-arrow-rotate-back"></i> Volver</a>
         <div class="card m-1 table-responsive shadow-sm">
@@ -33,7 +33,7 @@
                     @endif
                 </tbody>
             </table>
-            {{ $areas->links() }}
         </div>
+        {{ $areas->links() }}
     </div>
 @endsection

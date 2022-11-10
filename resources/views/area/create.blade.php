@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title','Añadir Area')
+@section('title','Añadir Area de Salud')
 @section('content')
     <div class="container">
-        <h1>Añadir Area</h1>
+        <h1>Añadir Área de Salud</h1>
         {!! Form::open(['route'=>'area.store','method'=>'POST']) !!}
         <div class=" form-group">
             <label for="nombre">Nombre</label>

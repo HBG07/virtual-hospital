@@ -23,7 +23,7 @@ class PesquisaController extends Controller
      */
     public function index()
     {
-        $pesquisas = Pesquisa::orderBy('fecha','DESC')->with('pesquisado')->paginate(10);
+        $pesquisas = Pesquisa::orderBy('fecha','DESC')->with('pesquisado')->paginate(5);
         $cantidad_pesquisas = Pesquisa::all()->count();
         $cantidad_pesquisados = Pesquisado::all()->count();
         $cantidad_contactos_acumulados = Pesquisa::all()->where('contacto', 1)->count();
@@ -149,6 +149,10 @@ class PesquisaController extends Controller
     {
         $pesquisa = Pesquisa::where('CI_pesquisado', $CI)->where('fecha', $fecha)->first();
         $pesquisa->delete();
+        $pesquisas = Pesquisa::with('pesquisado')->where('CI_pesquisado',$CI);
+        $pesquisado = Pesquisado::with('pesquisas');
+        $pesquisado = $pesquisado->where('CI',$CI)->first();
+        if($pesquisas->count()==0) $pesquisado->delete();
         Session::flash('danger', 'Eliminada pesquisa de ' . $CI . ' con fecha ' . $fecha);
         return redirect()->route('pesquisa.index');
     }

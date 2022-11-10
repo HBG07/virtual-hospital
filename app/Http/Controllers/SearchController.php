@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SearchRequest;
 use App\Pesquisa;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,7 @@ class SearchController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(SearchRequest $request)
     {
         $pesquisas = Pesquisa::with('pesquisado');
         if(isset($request->CI))

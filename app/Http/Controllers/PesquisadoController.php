@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Pesquisado;
 use App\Consultorio;
 use App\Http\Requests\PesquisadoRequest;
+use App\Pesquisa;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -22,7 +23,7 @@ class PesquisadoController extends Controller
      */
     public function index()
     {
-        $pesquisados = Pesquisado::paginate(10);
+        $pesquisados = Pesquisado::paginate(5);
         return view('pesquisado.index')->with('pesquisados',$pesquisados);
     }
 
@@ -62,7 +63,10 @@ class PesquisadoController extends Controller
      */
     public function show(Pesquisado $pesquisado)
     {
-        return view('pesquisado.show')->with('pesquisado',$pesquisado);
+        $pesquisas = Pesquisa::with('pesquisado');
+        $pesquisas = $pesquisas->join('pesquisados','pesquisados.CI','=','pesquisas.CI_pesquisado');
+        $pesquisas = $pesquisas->where('CI',$pesquisado->CI);
+        return view('pesquisado.show')->with(['pesquisado'=>$pesquisado,'pesquisas'=>$pesquisas->paginate(5)]);
     }
 
     /**

@@ -70,5 +70,6 @@
                 </table>
             </div>
         </div>
+        {{$pesquisas->links()}}
     </div>
 @endsection

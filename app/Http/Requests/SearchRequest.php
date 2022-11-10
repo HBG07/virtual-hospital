@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AreaRequest extends FormRequest
+class SearchRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,9 @@ class AreaRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre'=>'min:6|required|unique:areas_salud',
-            'municipio'=>'min:6|required',
-            'provincia'=>'min:6|required'
+            'CI'=>['regex:/[0-9]{2}(?:0[1-9]{1}|1[0-2]{1})(?:0[1-9]{1}|[12][0-9]{1}|3[01])[0-9]{5}/'],
+            'edad'=>'',
+            'fecha'=>''
         ];
     }
 }

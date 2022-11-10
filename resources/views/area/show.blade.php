@@ -20,7 +20,7 @@
                         <th>Opciones</th>
                     </thead>
                     <tbody>
-                        @foreach ($area->consultorios as $consultorio)
+                        @foreach ($consultorios as $consultorio)
                             <tr>
                                 <td><a class="text-dark" href="{{ route('consultorio.show',$consultorio->numero) }}">{{$consultorio->numero}}</a></td>
                                 <td>{{ $consultorio->direccion }}</td>
@@ -33,6 +33,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{$consultorios->links()}}
             </div>
         </div>
     </div>

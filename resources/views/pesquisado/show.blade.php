@@ -33,7 +33,7 @@
                         <th>Opciones</th>
                     </thead>
                     <tbody>
-                        @foreach ($pesquisado->pesquisas as $pesquisa)
+                        @foreach ($pesquisas as $pesquisa)
                             <tr>
                                 <td>{{ $pesquisa->fecha }}</td>
                                 <td>{{ $pesquisa->tipo_pesquisador }}</td>
@@ -57,6 +57,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{$pesquisas->links()}}
             </div>
         </div>
     </div>

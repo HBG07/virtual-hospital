@@ -39,7 +39,7 @@
                 @endif
             </tbody>
         </table>
-        {{ $pesquisados->links() }}
     </div>
+    {{ $pesquisados->links() }}
 </div>
 @endsection
