@@ -25,7 +25,7 @@ class PesquisadoRequest extends FormRequest
     {
         return [
             // agregar regex CI
-            'CI'=>'min:11|max:11|required',
+            'CI'=>'min:11|max:11|unique:pesquisados|required',
             'nombre'=>'min:4|max:50|required',
             'primer_apellido'=>'min:4|max:50|required',
             'segundo_apellido'=>'min:4|max:50|required'

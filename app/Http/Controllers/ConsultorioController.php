@@ -5,11 +5,16 @@ namespace App\Http\Controllers;
 use App\Consultorio;
 use App\Area;
 use App\Http\Requests\ConsultorioRequest;
+use App\Pesquisado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class ConsultorioController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -54,7 +59,10 @@ class ConsultorioController extends Controller
      */
     public function show(Consultorio $consultorio)
     {
-        return view('consultorio.show')->with('consultorio',$consultorio);
+        $pesquisados = Pesquisado::with('pesquisas');
+        $pesquisados = $pesquisados->join('consultorios','consultorios.numero','=','pesquisados.numero_consultorio');
+        $pesquisados = $pesquisados->where('numero',$consultorio->numero);
+        return view('consultorio.show')->with(['consultorio'=>$consultorio,'pesquisados'=>$pesquisados->paginate(5)]);
     }
 
     /**

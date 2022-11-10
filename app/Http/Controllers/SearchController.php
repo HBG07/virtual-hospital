@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SearchRequest;
 use App\Pesquisa;
 use Illuminate\Http\Request;
 
@@ -23,7 +24,7 @@ class SearchController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(SearchRequest $request)
     {
         $pesquisas = Pesquisa::with('pesquisado');
         if(isset($request->CI))
@@ -45,8 +46,9 @@ class SearchController extends Controller
                     break;
             }
         }
-
-        return view('pesquisa.index')->with(['pesquisas'=>$pesquisas->get()]);
+        $cantidad_pesquisas = $pesquisas->count();
+        $cantidad_pesquisados = $pesquisas->distinct('CI_pesquisado')->count();
+        return view('pesquisa.index')->with(['pesquisas'=>$pesquisas->get(),'cantidad_pesquisas' => $cantidad_pesquisas, 'cantidad_pesquisados' => $cantidad_pesquisados, 'cantidad_contactos_acumulados' => $pesquisas->where('contacto',1)->count()]);
         // return dd($pesquisas->get());
     }
 }

@@ -4,12 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Pesquisas</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        {{-- <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet"> --}}
 
         <!-- Styles -->
+        <link rel="stylesheet" href="{{asset('css/style.css')}}">
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <script src="{{asset('js/app.js')}}"></script>
         <style>
             html, body {
                 background-color: #fff;
@@ -68,27 +71,28 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Inicio</a>
+                        <a href="{{ url('/dashboard') }}">Inicio</a>
                     @else
                         <a href="{{ route('login') }}">Acceder</a>
 
-                        @if (Route::has('register'))
+                        {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}">Registrarse</a>
-                        @endif
+                        @endif --}}
                     @endauth
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
+                    <i class=" fas fa-hospital"></i>
                     Pesquisas
                 </div>
 
                 <div class="links">
-                    <a href="{{route('area.index')}}">Area</a>
-                    <a href="{{route('consultorio.index')}}">Consultorio</a>
-                    <a href="{{route('pesquisado.index')}}">Pesquisado</a>
-                    <a href="{{route('pesquisa.index')}}">Pesquisa</a>
+                    <a href="{{route('area.index')}}">Areas</a>
+                    <a href="{{route('consultorio.index')}}">Consultorios</a>
+                    <a href="{{route('pesquisado.index')}}">Pesquisados</a>
+                    <a href="{{route('pesquisa.index')}}">Pesquisas</a>
                 </div>
             </div>
         </div>

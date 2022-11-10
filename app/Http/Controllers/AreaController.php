@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Area;
+use App\Consultorio;
 use App\Http\Requests\AreaRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class AreaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -52,7 +57,10 @@ class AreaController extends Controller
      */
     public function show(Area $area)
     {
-        return view('area.show')->with('area',$area);
+        $consultorios = Consultorio::with('pesquisados');
+        $consultorios = $consultorios->join('areas_salud','areas_salud.nombre','=','consultorios.nombre_area');
+        $consultorios = $consultorios->where('nombre_area',$area->nombre);
+        return view('area.show')->with(['area'=>$area,'consultorios'=>$consultorios->paginate(5)]);
     }
 
     /**

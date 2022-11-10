@@ -11,16 +11,25 @@
 |
 */
 
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    if(User::all()->count()==0) return view('auth.register');
     return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('users/','ViewEditUpdateController@index')->name('user.index');
+Route::get('user/edit/{user}','ViewEditUpdateController@edit')->name('user.edit');
+Route::put('user/update/{user}/','ViewEditUpdateController@update')->name('user.update');
+Route::get('user/{user}/destroy/','ViewEditUpdateController@destroy')->name('user.destroy');
+
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+Route::post('/dashboard','HomeController@show')->name('home.show');
+Route::get('admin/pesquisas/contactos','HomeController@contactos')->name('home.contactos');
 
 // Group admin routes
 Route::group(['prefix'=>'admin'],function(){

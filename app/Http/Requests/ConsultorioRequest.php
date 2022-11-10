@@ -24,8 +24,9 @@ class ConsultorioRequest extends FormRequest
     public function rules()
     {
         return [
-            'numero'=>'max:2|numeric|required',
-            'direccion'=>'min:8|required'
+            'numero'=>'min:0|numeric|unique:consultorios|required',
+            'direccion'=>'min:8|required',
+            'nombre_area'=>'required'
         ];
     }
 }

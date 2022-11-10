@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title','Búsqueda Avanzada')
 @section('content')
-<h1 class="text-center">Búsqueda Avanzada</h1>
+<h1 class="text-center"><i class="fas fa-search-plus"></i> Búsqueda Avanzada</h1>
     <div class="container">
         <form action="{{ route('search.show') }}" method="post">
             @csrf
@@ -22,6 +22,7 @@
                 <label for="mayor">Mayor de 60</label>
             </div>
             <input class="btn btn-primary" type="submit" value="Filtrar">
+            <a href="{{ route('dashboard') }}" class="btn btn-secondary m-1"><i class="fas fa-arrow-rotate-back"></i> Volver</a>
         </form>
     </div>
 @endsection

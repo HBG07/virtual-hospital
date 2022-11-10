@@ -24,7 +24,7 @@ class AreaRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre'=>'min:6|required',
+            'nombre'=>'min:6|required|unique:areas_salud',
             'municipio'=>'min:6|required',
             'provincia'=>'min:6|required'
         ];
